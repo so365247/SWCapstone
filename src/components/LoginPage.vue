@@ -34,4 +34,18 @@
         </div>
     </div>
 </template>
-    
+
+<script>
+export default {
+    data() {
+        return {
+            visible: false,
+        };
+    },
+    methods: {
+        togglePWvisibility() {
+            this.visible = !this.visible;
+        },
+    },
+};
+</script>
