@@ -1,115 +1,153 @@
 <template>
-    <v-container fluid>
-        <div class="login-form">
-            <h1 class="title">GUARDIAN</h1>
-
-            <v-text-field label="ID" color="grey" class="input-box"></v-text-field>
-            
-            <v-text-field
-                :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
-                :type="visible ? 'text' : 'password'"
-                label="PW"
-                color="grey"
-                class="input-box"
-                @click:append-inner="togglePWvisibility"
-            ></v-text-field>
-
-            <v-btn @click.prevent="goDashBoard" class="login-btn">
-                로그인
-            </v-btn>
-
-            <div class="link">
-                <a href="#" class="link-txt">아이디 찾기</a> |
-                <a href="#" class="link-txt">비밀번호 찾기</a> |
-                <a href="#" @click.prevent="goSignUp" class="link-txt">회원가입</a>
-            </div>
+    <v-container fluid class="login-container">
+      <div class="login-box">
+        <div class="left">
+          <h1 class="title">Login</h1>
+  
+          <v-text-field label="ID" color="grey" class="input-box"></v-text-field>
+          
+          <v-text-field
+            :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+            :type="visible ? 'text' : 'password'"
+            label="PW"
+            color="grey"
+            class="input-box"
+            @click:append-inner="togglePWvisibility"
+          ></v-text-field>
+  
+          <v-btn @click.prevent="goDashBoard" class="login-btn">로그인</v-btn>
+          
+          <div class="link">
+            <a href="#" class="link-txt">아이디 찾기</a> |
+            <a href="#" class="link-txt">비밀번호 찾기</a> |
+            <a href="#" @click.prevent="goSignUp" class="link-txt">회원가입</a>
+          </div>
+  
         </div>
+  
+        <div class="right">
+  
+            <img src="@/assets/right_side_logo.png" class="logo" />
+          <p class="comment-ko">AI를 활용한 시스템을 통해<br />누구보다 <span class="highlight">빠르게</span> 화재를 감지하세요</p>
+          <p class="comment-en">
+            Detect fire faster<br />
+            than anyone else<br />
+            with a system that uses AI
+          </p>
+          
+        </div>
+      </div>
     </v-container>
-</template>
-
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
+  </template>
+  
+  <script>
+  export default {
+    methods: {
+      togglePWvisibility() {
+        this.visible = !this.visible;
+      },
+      goSignUp() {
+        this.$router.push({ path: "/signup" });
+      },
+      goDashBoard() {
+        this.$router.push({ path: "/dashboard" });
+      },
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .login-container {
+    background: url('@/assets/로그인 배경 화면2.png') no-repeat center center;
+    background-size: cover;
     height: 100vh;
-    overflow: hidden;
-}
-
-.v-application {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.v-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #2a2a2a;
-}
-
-.login-form {
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.title {
-    color: #5cffd1;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.input-box {
-    height: 50px;
-    background-color: #3a3a3a;
+  }
+  
+  .login-box {
+    width: 80%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: rgba(40, 40, 40, 0.7);
+    display: flex;
+    border-radius: 15px;
+    padding: 30px;
     color: white;
+  }
+  
+  
+  .left,
+  .right {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 32px;
     margin-bottom: 30px;
-}
-
-.login-btn {
-    width: 400px;
-    height: 50px !important;
-    font-size: 14px;
-    border-radius: 25px;
-    color: black;
     font-weight: bold;
-    background-color: #5cffd1;
-}
-
-.link {
+    color: white;
+  }
+  
+  .input-box {
+    margin-bottom: 20px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #b00000;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .link {
+    margin-top: 0px;
     font-size: 12px;
-    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .link-txt {
     color: #fff;
-}
-
-.link-txt {
+    margin: 0 8px;
     text-decoration: none;
-    color: #fff;
-    margin: 0 10px;
-    cursor: pointer;
-}
-</style>
-
-<script>
-export default {
-    data() {
-        return {
-            visible: false,
-        };
-    },
-    methods: {
-        togglePWvisibility() {
-            this.visible = !this.visible;
-        },
-        goSignUp() {
-            this.$router.push({ path: '/signup' });
-        },
-        goDashBoard() {
-            this.$router.push({ path: '/dashboard' });
-        },
-    },
-};
-</script>
+  }
+  
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 40px;
+  }
+  
+  .logo {
+    width: 278px;
+    height: 74px;
+    margin-bottom: 55px;
+  }
+  
+  .comment-ko {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-right: 18px;
+  }
+  
+  .highlight {
+    color: #ff3c3c;
+  }
+  
+  .comment-en {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  </style>
