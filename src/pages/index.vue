@@ -2,6 +2,6 @@
     <LoginPage />
 </template>
 
-<script setup>
+<!-- <script setup>
     import LoginPage from '@/components/LoginPage.vue';
-</script>
+</script> -->
