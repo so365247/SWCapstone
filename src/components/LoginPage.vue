@@ -27,13 +27,20 @@
   
         <div class="right">
   
-            <img src="@/assets/right_side_logo.png" class="logo" />
-          <p class="comment-ko">AI를 활용한 시스템을 통해<br />누구보다 <span class="highlight">빠르게</span> 화재를 감지하세요</p>
-          <p class="comment-en">
-            Detect fire faster<br />
-            than anyone else<br />
-            with a system that uses AI
-          </p>
+          <img src="@/assets/right_side_logo.png" class="logo" />
+
+          <div class="comment-ko-container">
+            <img src="@/assets/Line 2.png" class="short-bar" />
+            <p class="comment-ko"><span class="highlight">AI</span>를 활용한 시스템을 통해<br />누구보다 <span class="highlight">빠르게</span> 화재를 감지하세요</p>
+          </div>
+          <div class="comment-en-container">
+            <img src="@/assets/Line 3.png" class="short-bar" />
+            <p class="comment-en">
+              Detect fire faster<br />
+              than anyone else<br />
+              with a system that uses AI
+            </p>
+          </div>
           
         </div>
       </div>
@@ -82,7 +89,7 @@
   .right {
     flex: 1;
     padding: 20px;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
   }
@@ -90,8 +97,10 @@
   .title {
     font-size: 32px;
     margin-bottom: 30px;
-    font-weight: bold;
-    color: white;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.69);
+    font-family: 'Pretendard Variable';
+    letter-spacing: 1.84px;
   }
   
   .input-box {
@@ -100,17 +109,21 @@
   
   .login-btn {
     width: 100%;
-    height: 50px;
-    background-color: #b00000;
+    height: 60px;
+    background-color: #A30505;
     color: white;
-    font-weight: bold;
+    font-weight: 300;
+    letter-spacing: 1.84px;
+    font-family: 'Pretendard Variable';
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
+    border-radius: 7px;
   }
   
   .link {
     margin-top: 0px;
     font-size: 12px;
+    font-weight: 200;
     text-align: center;
   }
   
@@ -133,21 +146,44 @@
     height: 74px;
     margin-bottom: 55px;
   }
+
+  .comment-ko-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   
   .comment-ko {
+    margin-left: 16px;
+    font-weight: 200;
+    color: #ffffffb7;
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    letter-spacing: 1.84px;
     margin-right: 18px;
+    font-family: 'Pretendard Variable';
   }
   
   .highlight {
+    font-weight: 400;
     color: #ff3c3c;
+  }
+
+  .comment-en-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   
   .comment-en {
-    font-size: 12px;
-    color: #ccc;
-    line-height: 1.5;
+    margin-left: 16px;
+    color: #ffffffb7;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-right: 18px;
+    letter-spacing: 1.84px;
+    font-family: 'Pretendard Variable';
   }
   </style>
